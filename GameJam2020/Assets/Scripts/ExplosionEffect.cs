@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class ExplosionEffect : MonoBehaviour
 {
-    public float explosionStrength = 100;
-    public float radius = 10f;
+    public float explosionForce = 100;
+    public float radius = 100f;
 
-    public Collider2D[] colliders;
 
-    private void Start()
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        colliders = Physics2D.OverlapCircleAll(transform.position, radius);
-        foreach (Collider2D hit in colliders)
+        if (col.CompareTag("Player")||col.CompareTag("Bola"))
         {
-            Rigidbody2D[] rbs = new Rigidbody2D[colliders.Length];
-            for (int i = 0; i <colliders.Length; i++)
-            {
-                //rbs[i] = 
-                if(colliders[i].GetComponent<Rigidbody2D>() != null)
-                {
-                    rbs[i].AddExplosionForce(explosionStrength, this.transform.position, radius);
-                    i++;
-                }
-            }
+            Rigidbody2D rb = col.GetComponent<Rigidbody2D>();
+
+            var explosionDir = rb.transform.position - transform.position;
+            var explosionDistance = explosionDir.magnitude;
+
+            explosionDir /= explosionDistance;
+
+            rb.AddForce(Mathf.Lerp(100, explosionForce, ( explosionDistance)) * explosionDir, ForceMode2D.Force);
+            Debug.Log(rb);
+            Debug.Log(explosionDistance);
+            Debug.Log(explosionDir);
+            //rb.AddExplosionForce(explosionForce, transform.position, radius);
         }
     }
 }

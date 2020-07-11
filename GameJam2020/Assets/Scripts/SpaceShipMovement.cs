@@ -43,9 +43,8 @@ public class SpaceShipMovement : MonoBehaviour
 
         else
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space))
             {
-                Debug.Log("Propulsor");
                 rb.AddForce(transform.up * thrustForce);
                 launched = true;
             }
@@ -55,8 +54,7 @@ public class SpaceShipMovement : MonoBehaviour
 
     public void HitTarget()
     {
-        torqueForce = Random.Range(5, 12);
-        Debug.Log("Hit");
+        torqueForce = Random.Range(-2, 2);
         rb.AddTorque(torqueForce, ForceMode2D.Impulse);
     }
 

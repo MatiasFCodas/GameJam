@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    public float radius = 5.0F;
-    public float power = 10.0F;
 
-    private GameObject explosionEffect;
+    public GameObject explosionEffect;
 
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Player"))
         {
             Instantiate(explosionEffect, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 }

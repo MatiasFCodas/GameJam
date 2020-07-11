@@ -13,7 +13,7 @@ public class PontaFoguete : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Bola"))
+        if (col.CompareTag("Bola") || col.CompareTag("Bomba"))
         {
             shipMove.HitTarget();
         }
