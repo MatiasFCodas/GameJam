@@ -54,7 +54,7 @@ public class SpaceShipMovement : MonoBehaviour
 
     public void HitTarget()
     {
-        torqueForce = Random.Range(-2, 2);
+        torqueForce = Random.Range(-0.5f, 0.5f);
         rb.AddTorque(torqueForce, ForceMode2D.Impulse);
     }
 
