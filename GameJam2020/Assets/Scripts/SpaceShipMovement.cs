@@ -10,6 +10,8 @@ public class SpaceShipMovement : MonoBehaviour
     public float launchForce = 10f;
     public float thrustForce = 20f;
     public float torqueForce;
+    public float angularDragNormal = 0.5f;
+    public float angularDragForce = 0.1f;
     private float torque;
 
     public float rotationSpeed = 60f;
@@ -20,6 +22,8 @@ public class SpaceShipMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.angularDrag = angularDragNormal;
+
         shipAnimation = GetComponent<ShipAnimation>();
     }
 
@@ -50,12 +54,14 @@ public class SpaceShipMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.Space))
             {
                 rb.AddForce(transform.up * thrustForce);
+                rb.angularDrag += angularDragForce;
                 launched = true;
                 shipAnimation.isMoving = true;
             }
 
             if (Input.GetKeyUp(KeyCode.Space))
             {
+                rb.angularDrag = angularDragNormal;
                 shipAnimation.isMoving = false;
             }
 
