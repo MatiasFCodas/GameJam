@@ -10,6 +10,8 @@ public class SpaceShipMovement : MonoBehaviour
     public float thrustForce = 20f;
     public float torqueForce;
 
+    private float torque;
+
     public float rotationSpeed = 60f;
 
     public bool launched;
@@ -54,7 +56,7 @@ public class SpaceShipMovement : MonoBehaviour
 
     public void HitTarget()
     {
-        torqueForce = Random.Range(-0.5f, 0.5f);
+        torque = Random.Range(-torqueForce, torqueForce);
         rb.AddTorque(torqueForce, ForceMode2D.Impulse);
     }
 
