@@ -10,6 +10,8 @@ public class SpaceShipMovement : MonoBehaviour
     public float thrustForce = 20f;
     public float torqueForce;
 
+    public float rotationSpeed = 60f;
+
     public bool launched;
 
 
@@ -27,6 +29,16 @@ public class SpaceShipMovement : MonoBehaviour
                 rb.AddForce(transform.up * launchForce, ForceMode2D.Impulse);
                 launched = true;
             }
+
+            if (Input.GetKey(KeyCode.A))
+            {
+                transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
+            }
+
+            if (Input.GetKey(KeyCode.D))
+            {
+                transform.Rotate(-Vector3.forward * rotationSpeed * Time.deltaTime);
+            }
         }
 
         else
@@ -37,6 +49,7 @@ public class SpaceShipMovement : MonoBehaviour
                 rb.AddForce(transform.up * thrustForce);
                 launched = true;
             }
+
         }
     }
 

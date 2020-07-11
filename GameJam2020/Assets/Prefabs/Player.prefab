@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1351084886501154844}
   - component: {fileID: 1351084886501154847}
   - component: {fileID: 1351084886501154843}
-  - component: {fileID: 1351084886501154840}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -121,7 +120,6 @@ MonoBehaviour:
   launchForce: 10
   thrustForce: 10
   torqueForce: 5
-  angularDragOn: 0.1
   rotationSpeed: 15
   launched: 0
 --- !u!70 &1351084886501154843
@@ -140,22 +138,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.16, y: 0.16}
   m_Direction: 0
---- !u!58 &1351084886501154840
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351084886501154846}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.041256353}
-  serializedVersion: 2
-  m_Radius: 0.03874365
 --- !u!1 &1351084886770490843
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,6 +148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1351084886770490840}
   - component: {fileID: 1351084886770490841}
+  - component: {fileID: 4754626410081302130}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -236,3 +219,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &4754626410081302130
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351084886770490843}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.037257936}
+  serializedVersion: 2
+  m_Radius: 0.04272287
