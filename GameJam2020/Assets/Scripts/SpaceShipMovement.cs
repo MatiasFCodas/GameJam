@@ -12,6 +12,7 @@ public class SpaceShipMovement : MonoBehaviour
 
     public bool launched;
 
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -53,4 +54,6 @@ public class SpaceShipMovement : MonoBehaviour
             HitTarget();
         }
     }
+
+
 }
