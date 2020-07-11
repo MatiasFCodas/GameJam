@@ -53,20 +53,11 @@ public class SpaceShipMovement : MonoBehaviour
         }
     }
 
-    void HitTarget()
+    public void HitTarget()
     {
         torqueForce = Random.Range(5, 12);
         Debug.Log("Hit");
         rb.AddTorque(torqueForce, ForceMode2D.Impulse);
     }
-
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.CompareTag("Bola"))
-        {
-            HitTarget();
-        }
-    }
-
 
 }

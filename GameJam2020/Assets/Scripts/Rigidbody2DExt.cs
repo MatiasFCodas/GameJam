@@ -23,6 +23,5 @@ public static class Rigidbody2DExt
         }
 
         rb.AddForce(Mathf.Lerp(0, explosionForce, (1 - explosionDistance)) * explosionDir, mode);
-        Debug.Log("Explodiu");
     }
 }
