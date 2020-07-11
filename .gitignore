@@ -1,4 +1,4 @@
-/GameJam2020/Library/
+~/GameJam2020/Library/
 [Tt]emp/
 [Oo]bj/
 [Bb]uild/
@@ -103,4 +103,4 @@ fmod_editor.log
 /Assets/_Project/Preferences/Editor/Credentials.meta
 /Assets/Temp/**
 /Assets/Temp.meta
-/Design de Games - Inovacao/fmod_editor.log
+/Library/
