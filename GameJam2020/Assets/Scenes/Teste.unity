@@ -428,7 +428,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612032321}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.87, y: -1.69, z: 0}
+  m_LocalPosition: {x: -2.76, y: -3.24, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children: []
   m_Father: {fileID: 0}
@@ -547,7 +547,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 889981720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.31, y: 0.42, z: 0}
+  m_LocalPosition: {x: 0.16, y: 0.68, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children: []
   m_Father: {fileID: 0}
@@ -584,6 +584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5e1b5f9c87af234e8474e3ee1b72134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finishedObjectives: {fileID: 0}
 --- !u!58 &1179950357
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -804,7 +805,7 @@ GameObject:
   - component: {fileID: 1916374937}
   - component: {fileID: 1916374938}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -836,6 +837,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38052aefc470bbb408596345478b9f19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finishedObjectives: {fileID: 0}
+  winLevel: 0
 --- !u!1 &1985643425
 GameObject:
   m_ObjectHideFlags: 0
@@ -867,6 +870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5e1b5f9c87af234e8474e3ee1b72134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finishedObjectives: {fileID: 0}
 --- !u!58 &1985643427
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1047,6 +1051,16 @@ PrefabInstance:
         type: 3}
       propertyPath: angularDragForce
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351084886501154847, guid: 4a7024f6e8dfddb4098fcda886fcab34,
+        type: 3}
+      propertyPath: angularDragNormal
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351084886501154847, guid: 4a7024f6e8dfddb4098fcda886fcab34,
+        type: 3}
+      propertyPath: launchForce
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1351084886501154843, guid: 4a7024f6e8dfddb4098fcda886fcab34,
         type: 3}
