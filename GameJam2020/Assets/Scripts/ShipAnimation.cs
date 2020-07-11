@@ -11,8 +11,8 @@ public class ShipAnimation : MonoBehaviour
     public string hitAnimation = "Colisao";
     public string dieAnimation = "Morte";
 
-    enum State { Idle, Move, Spin, Hit, Die}
-    private State state = State.Idle;
+    public enum State { Idle, Move, Spin, Hit, Die}
+    public State state = State.Idle;
 
     private UnityArmatureComponent armature;
 
@@ -30,14 +30,24 @@ public class ShipAnimation : MonoBehaviour
 
     private void Update()
     {
-        if (isMoving)
+        if (hit)
+        {
+            StartCoroutine("PlayAnim", "Hit");
+        }
+
+        else if (spin)
+        {
+            StartCoroutine("PlayAnim", "Spin");
+        }
+
+         else if (isMoving)
         {
             Move();
         }
 
-        else if (hit)
+        else
         {
-
+            Idle();
         }
     }
 
@@ -93,8 +103,21 @@ public class ShipAnimation : MonoBehaviour
 
     IEnumerator PlayAnim(string anim)
     {
+        TimingAnimation(anim);
+        yield return new WaitForSeconds(timeAnim);
+        switch (anim)
+        {
+            case "Hit":
+                spin = true;
+                hit = false;
+                break;
 
-        yield return new WaitForSeconds(0.5f);
+            case "Spin":
+                spin = false;
+                hit = false;
+                break;
+
+        }
     }
 
     void TimingAnimation(string anim)

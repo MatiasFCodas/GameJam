@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1351084886501154842}
   - component: {fileID: 1351084886501154844}
   - component: {fileID: 1351084886501154847}
+  - component: {fileID: 516602864999662152}
   - component: {fileID: 1351084886501154843}
   m_Layer: 0
   m_Name: Player
@@ -73,6 +74,27 @@ MonoBehaviour:
   torqueForce: 5
   rotationSpeed: 15
   launched: 0
+--- !u!114 &516602864999662152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351084886501154846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebb8420585f27547a3f5326b980c579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleAnimation: Inercia
+  moveAnimation: Propulsao
+  spinAnimation: Rodando
+  hitAnimation: Colisao
+  dieAnimation: Morte
+  state: 0
+  isMoving: 0
+  hit: 0
+  spin: 0
 --- !u!70 &1351084886501154843
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -221,7 +243,7 @@ PrefabInstance:
     - target: {fileID: 8796637053516738010, guid: 8aa29c94f461f384da7a7b5d994683e2,
         type: 3}
       propertyPath: animationName
-      value: Rodando
+      value: Inercia
       objectReference: {fileID: 0}
     - target: {fileID: 4471204471005878007, guid: 8aa29c94f461f384da7a7b5d994683e2,
         type: 3}
@@ -296,12 +318,12 @@ PrefabInstance:
     - target: {fileID: 15729942829922393, guid: 8aa29c94f461f384da7a7b5d994683e2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7479228184762928034, guid: 8aa29c94f461f384da7a7b5d994683e2,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8182005193984503932, guid: 8aa29c94f461f384da7a7b5d994683e2,
         type: 3}
@@ -311,12 +333,12 @@ PrefabInstance:
     - target: {fileID: 618987081871639251, guid: 8aa29c94f461f384da7a7b5d994683e2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2896098285777383830, guid: 8aa29c94f461f384da7a7b5d994683e2,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3909003536657228408, guid: 8aa29c94f461f384da7a7b5d994683e2,
         type: 3}
@@ -326,13 +348,13 @@ PrefabInstance:
     - target: {fileID: 2771133988047065640, guid: 8aa29c94f461f384da7a7b5d994683e2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9207745683090382969, guid: 8aa29c94f461f384da7a7b5d994683e2,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: 83b6f60a94a0ab741ab8dfccf1ae49a0, type: 2}
     - target: {fileID: 5277252958807476141, guid: 8aa29c94f461f384da7a7b5d994683e2,
         type: 3}
       propertyPath: m_Mesh
@@ -342,7 +364,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: 83b6f60a94a0ab741ab8dfccf1ae49a0, type: 2}
     - target: {fileID: 824358712817071378, guid: 8aa29c94f461f384da7a7b5d994683e2,
         type: 3}
       propertyPath: m_Mesh
@@ -367,7 +389,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: 83b6f60a94a0ab741ab8dfccf1ae49a0, type: 2}
     - target: {fileID: 6618028471654994993, guid: 8aa29c94f461f384da7a7b5d994683e2,
         type: 3}
       propertyPath: m_Mesh
@@ -377,7 +399,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 83b6f60a94a0ab741ab8dfccf1ae49a0, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 3131899118705199166, guid: 8aa29c94f461f384da7a7b5d994683e2,
         type: 3}
       propertyPath: m_Mesh
@@ -412,7 +434,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 83b6f60a94a0ab741ab8dfccf1ae49a0, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 619641544185659385, guid: 8aa29c94f461f384da7a7b5d994683e2,
         type: 3}
       propertyPath: m_Mesh
